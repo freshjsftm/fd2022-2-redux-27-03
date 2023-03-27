@@ -7,10 +7,10 @@ const countSlice = createSlice({
   },
   reducers:{
     addCount(state, action){
-      state.count++;
+      state.count += action.payload;
     },
     subCount(state, action){
-      state.count--;
+      state.count -= action.payload;
     }
   }
 })
