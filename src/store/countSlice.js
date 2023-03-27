@@ -3,18 +3,22 @@ import { createSlice } from '@reduxjs/toolkit';
 const countSlice = createSlice({
   name: 'counter',
   initialState: {
-    count:0
+    count: 0,
+    step: 1,
   },
-  reducers:{
-    addCount(state, action){
+  reducers: {
+    addCount(state, action) {
       state.count += action.payload;
     },
-    subCount(state, action){
+    subCount(state, action) {
       state.count -= action.payload;
-    }
-  }
-})
+    },
+    setStep(state, action) {
+      state.step = action.payload;
+    },
+  },
+});
 
-export const {addCount, subCount} = countSlice.actions;
+export const { addCount, subCount , setStep} = countSlice.actions;
 
-export default countSlice.reducer; 
+export default countSlice.reducer;

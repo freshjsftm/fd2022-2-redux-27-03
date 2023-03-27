@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addCount, subCount } from './store/countSlice';
+import { addCount, subCount, setStep } from './store/countSlice';
 
 const App = () => {
-  const [step, setStep] = useState(1);
-  const { count } = useSelector((state) => state.counter);
+  const { count, step } = useSelector((state) => state.counter);
   const dispatch = useDispatch();
   const handleAdd = () => dispatch(addCount(step));
   const handleSub = () => dispatch(subCount(step));
-  const handleStep = ({target:{value}}) =>{setStep(Number(value))}
+  const handleStep = ({ target: { value } }) =>
+    dispatch(setStep(Number(value)));
   return (
     <>
       <h2>count: {count}</h2>
