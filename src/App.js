@@ -1,13 +1,10 @@
 import React from 'react';
-import Counter from './components/Counter';
-import Todo from './components/Todo';
+import UsersList from './components/UsersList';
 
 const App = () => {
   return (
     <>
-      <Counter />
-      <hr />
-      <Todo />
+      <UsersList />
     </>
   );
 };
